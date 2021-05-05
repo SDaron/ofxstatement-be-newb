@@ -47,7 +47,6 @@ class NewBParser(CsvStatementParser):
     #13 Numéro d''extrait
 
     mappings = {
-        'check_no': 0,
         'date': 1,
         'payee': 6,
         'memo': 8,
@@ -78,9 +77,11 @@ class NewBParser(CsvStatementParser):
         """Parse given transaction line and return StatementLine object
         """
         self.statement.account_id =  line[0].replace(" ", "")
+        #self.statement.account_to =  line[5].replace(" ", "")
         
         stmtline = super(NewBParser, self).parse_record(line)
         stmtline.id = generate_transaction_id(stmtline)
         stmtline.trntype = 'DEBIT' if stmtline.amount < 0 else 'CREDIT'                
+        stmtline.bank_account_to = BankAccount(None, line[5].replace(" ", ""))
 
         return stmtline
