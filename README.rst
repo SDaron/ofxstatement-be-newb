@@ -5,6 +5,8 @@ NewB plugin for ofxstatement
 This project provides a newB (Belgian cooperative bank) plugin for ofxstatement.
 https://www.newb.coop
 
+You need to export your CSV file using point as decimal character and ';' as separator.
+
 `ofxstatement`_ is a tool to convert proprietary bank statement to OFX format,
 suitable for importing to GnuCash or Tryton. Plugin for ofxstatement parses a
 particular proprietary bank statement format and produces common data
