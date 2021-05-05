@@ -1,0 +1,13 @@
+*.pyc
+*.swp
+develop-eggs
+dist
+tests
+src/*.egg-info
+tags
+build
+eggs
+.venv
+.project
+.pydevproject
+*.sublime*
